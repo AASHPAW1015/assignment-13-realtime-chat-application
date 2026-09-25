@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realtime Chat</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <section id="login" class="login">
+      <form id="login-form" class="login-card">
+        <h1>Realtime Chat</h1>
+        <label for="username">Your name</label>
+        <input id="username" maxlength="20" placeholder="e.g. Aarav" autocomplete="off" required />
+        <label>Avatar</label>
+        <div id="avatars" class="avatars"></div>
+        <button type="submit">JOIN CHAT</button>
+      </form>
+    </section>
+
+    <div id="app" class="app hidden">
+      <aside class="sidebar">
+        <div class="me">
+          <span id="me-avatar" class="avatar"></span>
+          <strong id="me-name"></strong>
+          <span id="status" class="status offline">offline</span>
+        </div>
+
+        <h2>Rooms</h2>
+        <ul id="room-list" class="list"></ul>
+        <form id="new-room-form" class="new-room">
+          <input id="new-room" maxlength="24" placeholder="new-room" autocomplete="off" />
+          <button type="submit">+</button>
+        </form>
+
+        <h2>Online <span id="online-count" class="count">0</span></h2>
+        <ul id="online-list" class="list"></ul>
+      </aside>
+
+      <main class="chat">
+        <header class="chat-header">
+          <div>
+            <h1 id="chat-title">#general</h1>
+            <span id="chat-sub" class="sub"></span>
+          </div>
+          <button id="leave-btn" class="ghost">LEAVE</button>
+        </header>
+
+        <div id="messages" class="messages"></div>
+        <div id="typing" class="typing"></div>
+
+        <form id="send-form" class="composer">
+          <input id="message" maxlength="1000" placeholder="Type a message..." autocomplete="off" />
+          <button type="submit">SEND</button>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
