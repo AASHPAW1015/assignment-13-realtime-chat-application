@@ -11,6 +11,18 @@ reaches only that room, and any online user can be sent a private direct
 message that is delivered to their socket alone. The dark-theme frontend in
 `public/` is served by the same server.
 
+## Live demo
+
+https://assignment-13-realtime-chat-application-acvy.onrender.com
+
+Open it in two browser tabs (or on two devices) and log in with different
+names to chat. The app runs as one Render web service on the free tier (which
+supports WebSockets): the first visit after a period of inactivity can take up
+to a minute, and message history lives in memory, so it is cleared whenever
+the server restarts. Deployed with root directory
+`Ashutosh_Pawar_150096725130`, build `npm install`, start `npm start`; Render
+provides `PORT`.
+
 ## Tech stack
 
 - Node.js, Express 5
